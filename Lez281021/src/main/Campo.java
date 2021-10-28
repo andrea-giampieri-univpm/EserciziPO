@@ -11,38 +11,58 @@ public class Campo {
 		    un dato cliente   
 		       - public String tostring() per ottenere la lista delle prenotazini
 	 */
-	private Prenotazione[] listaPrenotazione;
-	private int lastPrenotazione=0;
-	private int precPrenotazione=0;
+	private Prenotazione[] listaPrenotazione; //array di prenotazioni: 1 campo ha n prenotazioni possibili stimato a 24 per gg
+	private int lastPrenotazione=0; //progressivo indice ultima prenotazione inserita
+	private int emptyIndex=0;
 	
 	public Campo(int n)
 	{
-		this.listaPrenotazione =new Prenotazione[n];
+		this.listaPrenotazione =new Prenotazione[n]; //inizializzazione array a lunghezza n
 	}
 	
 	public boolean addPrenotazione(int oraInizio, int oraFine, String nome) {
-		this.listaPrenotazione[this.lastPrenotazione]= new Prenotazione(nome,oraInizio);
-		this.lastPrenotazione=this.precPrenotazione;
-		this.lastPrenotazione++;
-		this.precPrenotazione=this.lastPrenotazione;
-		return true;
-	}
-	
-	public boolean removePrenotazione(String nome) {
-		boolean ret=false;
-		for (int i=0;i<this.lastPrenotazione;i++)
+		boolean conflict=false;
+		for(int i=0; i<this.lastPrenotazione;i++)
 		{
-			if(nome.equals(this.listaPrenotazione[i].getNome()))
-			{
-				this.precPrenotazione=this.lastPrenotazione-1;
-				this.listaPrenotazione[i]=null;
-				this.lastPrenotazione=i;
-				ret=true;
+			if(listaPrenotazione[i]!=null) {
+				int oraprenotata= this.listaPrenotazione[i].getOraInizioPrenotazione();
+				if(oraprenotata<=oraFine && oraprenotata>=oraInizio) 
+					conflict=true;
 			} else {
-				ret = false;
+				if (i<this.emptyIndex) this.emptyIndex=i;
 			}
 		}
-		return ret;
+		
+		if(!conflict) {
+				if (emptyIndex!=lastPrenotazione) {
+					this.listaPrenotazione[this.emptyIndex]= new Prenotazione(nome,oraInizio, oraFine);
+					this.emptyIndex=this.lastPrenotazione;
+				} else {
+					this.listaPrenotazione[this.lastPrenotazione]= new Prenotazione(nome,oraInizio, oraFine);
+					this.lastPrenotazione++;
+					this.emptyIndex++;
+				}
+				
+			//this.lastPrenotazione=this.precPrenotazione;	
+			//this.precPrenotazione=this.lastPrenotazione;
+		}
+		return conflict;
+	}
+	
+	
+	public boolean removePrenotazione(String nome) { //se rimuovo più di 1 elemento lascio dei buchi
+		boolean remove=false;
+		for (int i=0;i<this.lastPrenotazione && !remove;i++)
+		{
+			if(this.listaPrenotazione[i]!=null && nome.equals(this.listaPrenotazione[i].getNome()))
+			{
+				this.listaPrenotazione[i]=null;
+				remove=true;
+			} else {
+				remove = false;
+			}
+		}
+		return remove;
 	}
 	
 	public String toString()
@@ -50,13 +70,15 @@ public class Campo {
 		String text="";
 		for(int i=0; i<this.lastPrenotazione;i++)
 		{
-			text += this.listaPrenotazione[i].getNome();
-			text += "    ";
-			text += this.listaPrenotazione[i].getOraPrenotazione();
-			text+= "\n";
+			if(listaPrenotazione[i]!=null) 
+			{
+				text += this.listaPrenotazione[i].getNome();
+				text += "    ";
+				text += this.listaPrenotazione[i].getOraInizioPrenotazione();
+				text+= "\n";
+			}
 		}
 		return text;
 	}
-	
 
 }

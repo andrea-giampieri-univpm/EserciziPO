@@ -55,7 +55,8 @@ public class Main {
 				int inizio= input.nextInt();
 				System.out.println("fine: ");
 				int fine= input.nextInt();
-				campo.addPrenotazione(inizio,fine,nome);
+				if (campo.addPrenotazione(inizio,fine,nome)) System.out.println("conflitto");
+				else System.out.println("inserito");
 				break;
 			}
 			
