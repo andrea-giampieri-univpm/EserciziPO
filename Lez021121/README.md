@@ -1,0 +1,1 @@
+La segreteria di un corso di laurea desidera sviluppare un archivio elettronico per la gestione di tutti gli studenti, di tutti gli appelli d'esame, e delle sessioni di laurea. Implementare le classi Esame, Studente e CorsoLaurea [...]
