@@ -23,4 +23,3 @@ public class EsameIdoneita extends Esame {
 	}
 	
 }
-
