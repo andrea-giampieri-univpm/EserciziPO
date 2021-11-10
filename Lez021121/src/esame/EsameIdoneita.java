@@ -20,6 +20,5 @@ public class EsameIdoneita extends Esame {
 	
 	public boolean isIdoneo() {
 		return this.idoneo;
-	}
-	
+	}	
 }
