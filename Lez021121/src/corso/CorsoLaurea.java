@@ -1,5 +1,5 @@
 package corso;
-//1
+//a
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -10,7 +10,7 @@ public class CorsoLaurea {
 	private short minCrediti;
 	private String name;
 	private ArrayList<Studente> iscritti;
-	private ArrayList<Studente> iscrittiLaureati; //asd asd
+	private ArrayList<Studente> iscrittiLaureati; 
 	
 	
 	public CorsoLaurea(String gotName, short gotMinCrediti) {
