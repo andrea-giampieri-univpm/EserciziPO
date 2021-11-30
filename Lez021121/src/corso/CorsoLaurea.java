@@ -10,7 +10,7 @@ public class CorsoLaurea {
 	private short minCrediti;
 	private String name;
 	private ArrayList<Studente> iscritti;
-	private ArrayList<Studente> iscrittiLaureati;
+	private ArrayList<Studente> iscrittiLaureati; //asd asd
 	
 	
 	public CorsoLaurea(String gotName, short gotMinCrediti) {
