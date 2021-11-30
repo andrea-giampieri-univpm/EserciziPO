@@ -1,0 +1,99 @@
+Corso di PROGRAMMAZIONE A OGGETTI 2021/2022
+Esercitazione del 14/10/2021
+
+Esercizio 1
+Scrivere un programma TuttiPositiviPari che chiede all’utente di inserire una sequenza di interi
+(chiedendo prima quanti numeri voglia inserire) e poi, al termine dell’inserimento dell’intera
+sequenza, stampa "Tutti positivi e pari" se i numeri inseriti sono tutti positivi e pari, altrimenti stampa
+"NO".
+
+Esercizio 2
+Scrivere un programma ContinuaFino che chiede all’utente di inserire una
+sequenza di interi. Il programma continua a chiedere all’utente di
+inserire valori fintanto che i valori inseriti soddisfano almeno una
+delle seguenti condizioni:
+- è negativo e divisibile per 2
+- è positivo e divisibile per 3
+Al termine il programma stampa la somma di tutti i valori inseriti
+escluso quello che ha violato le condizioni.
+
+Esercizio 3
+Scrivere un programma PositivoNegativo che chiede all’utente di inserire una sequenza di interi
+terminata quando l’utente immette il valore 0; poi stampa "OK" se la sequenza contiene un valore
+positivo seguito da uno negativo, altrimenti stampa il messaggio "NO".
+Variante: faccio interrompere l’inserimento dei valori anche appena trovo un valore positivo seguito
+da quello negativo.
+
+Esercizio 4
+Scrivere un programma MediaMultipliDiTre che chiede all’utente di inserire una sequenza di interi
+(chiedendo prima quanti numeri voglia inserire) e poi stampa la media di tutti i numeri inseriti che
+siano divisibili per tre.
+Per esempio, se si immettono i valori 5, 8, 9, 12, 7, 6 ,1 il risultato stampato dovrà essere 9.
+
+Esercizio 5
+Scrivere un programma Ripetizioni che chiede all’utente di inserire
+una sequenza di caratteri (chiedendo prima quanti caratteri voglia
+inserire) e li ristampa man mano che vengono inseriti.
+L’intero procedimento (chiedere quanti caratteri voglia inserire,
+leggere i caratteri e man mano stamparli) dovrà essere ripetuto 5 volte.
+
+Esercizio 6
+Implementare il fattoriale di un numero dato in input.
+Il fattoriale deve essere calcolato in 3 versioni diverse: int, long e double.
+Valori interessanti da testare:
+12 (tutti ok)
+ 13 (int con problemi)
+ 17 (int con molti problemi)
+ 20 (long ok)
+ 21 (long con molti problemi)
+ 23 (int e long hanno problemi?)
+ 34 (int ha problemi serissimi)
+ 66 (int e long hanno problemi serissimi)
+ 171 (anche double non se la passa bene)
+
+Esercizio 7
+Creare un programma che definisca la probabilità di contagio tra 2 persone. Per ogni persona occorre
+inserire un numero che indichi:
+- 0: non porta la mascherina
+- 1: ha la mascherina chirurgica
+- 2: ha la FPP2
+- 3: ha la FPP3
+
+NB: Trovare online le probabilità di contagio.
+
+Esercizio 8
+Scrivere un programma JAVA SerieArmonica che chiede all’utente un numero intero da memorizzare
+nella variabile m e stampa in uscita la somma dei primi m termini della serie armonica.
+Ricordo che la serie armonica è la sommatoria di 1/n, con n che va da 1 ad infinito.
+Esempio: se il numero inserito dall’utente è 5, il programma deve calcolare e stampare il valore
+dell’espressione:
+1 + 1/2 + 1/3 + 1/4 + 1/5
+Come Variante: se il numero m è pari, allora sommare solo gli elementi pari; se m è dispari allora
+sommare solo gli elementi dispari.
+Esempio: m=5 --> 1 + 1/3 + 1/5
+m=4 --> 1/2 + ¼
+
+Esercizio 9
+Scrivere un programma Ripeti che chiede all'utente di inserire una stringa e un numero intero positivo.
+Entrambe le cose dovranno essere passate a un metodo ausiliario che stamperà tante copie della
+stringa quante indicate nel numero inserito dall'utente. Se il numero inserito dall'utente è negativo il
+metodo ausiliario stamperà "ERRORE: numero negativo". Il nome del metodo ausiliario può essere
+scelto a piacere.
+
+Esercizio 10
+Scrivere un programma Concatena che chiede all'utente di inserire tre singole parole e le ristampa
+interponendovi un asterisco. Per esempio, se l'utente inserisce "gatto", "cane" e "topo" il programma
+stamperà gatto*cane*topo. La concatenazione delle tre parole dovrà essere fatta utilizzando un 
+metodo ausiliario che prende due stringhe e restituisce la stringa ottenuta concatenando la prima
+parola ricevuta, un asterisco e la seconda parola ricevuta.
+
+Esercizio 11
+Scrivere un programma SoloVocali che chiede all'utente di inserire una stringa e ne stampa le sole
+vocali. Per esempio, se si immette la stringa "Viva Java", il programma stampa "iaaa".
+
+Esercizio 12
+Scrivere un programma Lunghezze che chiede all'utente di inserire una sequenza di stringhe e
+conclusa dalla stringa vuota, e poi stampa la somma delle lunghezze delle stringhe che iniziano con
+una lettera maiuscola.
+Per esempio, se si immettono le stringhe "Albero", "foglia", "Radici", "Ramo", "fiore" (e poi "" per
+finire), il programma stampa 16.
